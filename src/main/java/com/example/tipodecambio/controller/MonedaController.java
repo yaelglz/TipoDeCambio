@@ -37,20 +37,19 @@ public class MonedaController {
         Map<String, Double> tipoCambio = new HashMap<>();
 
         switch (codigo) {
-            case "MXN":
+            case "MXN" -> {
                 tipoCambio.put("USD", 0.056);
                 tipoCambio.put("EUR", 0.052);
-                break;
-            case "USD":
+            }
+            case "USD" -> {
                 tipoCambio.put("MXN", 17.85);
                 tipoCambio.put("EUR", 0.92);
-                break;
-            case "EUR":
+            }
+            case "EUR" -> {
                 tipoCambio.put("MXN", 19.17);
                 tipoCambio.put("USD", 1.09);
-                break;
-            default:
-                throw new IllegalArgumentException("Código de moneda no válido: " + codigo);
+            }
+            default -> throw new IllegalArgumentException("Código de moneda no válido: " + codigo);
         }
 
         return tipoCambio;
